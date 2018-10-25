@@ -23,10 +23,10 @@ class Spaceship extends Floater
   public void setY(int y){
     myCenterY += y;
   }
-  public int getX(int x){
+  public int getX(){
     return (int)myCenterX;
   }
-  public int getY(int y){
+  public int getY(){
     return (int)myCenterY;
   }
   public void setDirectionX(double x){
