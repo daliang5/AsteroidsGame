@@ -12,16 +12,13 @@ public void draw()
 }
 public void keyPressed() {
   if (keyCode == 37) {
-    double dX;
-    dX = ship.getPointDirection() - 5.0;
-    ship.setPointDirection((int)dX);
-    System.out.println(dX);
+    ship.turn(-5);
   } else if (keyCode == 38) {
+    ship.accelerate (0.000000000000001);
     
+    ship.move();
   } else if (keyCode == 39) {
-    double dX;
-    dX = ship.getPointDirection() + 5.0;
-    ship.setPointDirection((int)dX);
+    ship.turn(5);
   } else if (keyCode == 40) {
   }
 }
