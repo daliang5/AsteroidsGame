@@ -11,17 +11,17 @@ class Spaceship extends Floater
     xCorners[2] = -8;
     yCorners[2] = 8;
     myColor = 3;
-    myCenterX = width/2;
-    myCenterY = height/2;
-    myDirectionX = 20;
-    myDirectionY = 20;
+    myCenterX = 0;
+    myCenterY = 0;
+    myDirectionX = 0;
+    myDirectionY = 0;
     myPointDirection = 0;
   }
   public void setX(int x){
-    myCenterX += x;
+    myCenterX = x;
   }
   public void setY(int y){
-    myCenterY += y;
+    myCenterY = y;
   }
   public int getX(){
     return (int)myCenterX;
@@ -38,7 +38,6 @@ class Spaceship extends Floater
   public void setDirectionY(double y){
     myDirectionY = y;
   }
-  
   public double getDirectionY(){
     return myDirectionY;
   }
@@ -48,4 +47,18 @@ class Spaceship extends Floater
   public double getPointDirection(){
     return myPointDirection;
   }
+  public void hyperspace(){
+    myCenterX = (int)(Math.random()*999);
+    myCenterY = (int)(Math.random()*999);
+    myDirectionX = 0;
+    myDirectionY = 0;
+  }
+}
+interface Shootable{
+  public void shoot();
+}
+
+class nut implements Shootable{
+}
+class Rock implements Shootable{
 }
