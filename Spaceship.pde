@@ -1,5 +1,5 @@
 class Spaceship extends Floater  
-{   
+{  
   public Spaceship(){
     corners = 3;
     xCorners = new int[corners];
@@ -10,7 +10,7 @@ class Spaceship extends Floater
     yCorners[1] = 0;
     xCorners[2] = -8;
     yCorners[2] = 8;
-    myColor = 3;
+    myColor = 255;
     myCenterX = 0;
     myCenterY = 0;
     myDirectionX = 0;
@@ -49,16 +49,18 @@ class Spaceship extends Floater
   }
   public void hyperspace(){
     myCenterX = (int)(Math.random()*999);
-    myCenterY = (int)(Math.random()*999);
+    myCenterY = (int)(Math.random()*599);
     myDirectionX = 0;
     myDirectionY = 0;
+    myPointDirection = (int)(Math.random()*360);
   }
 }
 interface Shootable{
   public void shoot();
 }
 
-class nut implements Shootable{
+/*class nut implements Shootable{
 }
 class Rock implements Shootable{
 }
+*/
