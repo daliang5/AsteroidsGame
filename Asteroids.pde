@@ -27,10 +27,25 @@ class Asteroids extends Floater{
     yCorners[4] = 0;
     xCorners[5] = -2;
     yCorners[5] = 5;
-     
+    //wrap around screen    
+    if(myCenterX >width)
+    {     
+      myCenterX = 0;    
+    }    
+    else if (myCenterX<0)
+    {     
+      myCenterX = width;    
+    }    
+    if(myCenterY >height)
+    {    
+      myCenterY = 0;    
+    } 
     
+    else if (myCenterY < 0)
+    {     
+      myCenterY = height;    
+    }   
   }
- 
   public void setX(int x){myCenterX = x;}
   public void setY(int y){myCenterY = y;}
   public int getX(){return (int)myCenterX;}

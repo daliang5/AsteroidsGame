@@ -1,7 +1,7 @@
 //your variable declarations here
 Spaceship ship = new Spaceship();
 Star[] space = new Star[200];
-Asteroids ass = new Asteroids();
+Asteroids[] ass = new Asteroids[30];
 public void setup() 
 {
   size(1000, 600);
@@ -9,6 +9,9 @@ public void setup()
   ship.setY(height/2);
   for(int i = 0; i< space.length;i++){
     space[i] = new Star();
+  }
+  for(int i = 0; i< ass.length;i++){
+    ass[i] = new Asteroids();
   }
 }
 public void draw() 
@@ -19,9 +22,12 @@ public void draw()
   for(int i = 0; i< space.length;i++){
     space[i].show();
   }
-  ass.move();
-  ass.turn(3);
-  ass.show();
+  for(int i = 0; i< ass.length;i++){
+    ass[i].move();
+    ass[i].turn(3);
+    ass[i].setX(ass[i].getX() + 1);
+    ass[i].show(); 
+  }
 }
 public void keyPressed() {
   if (keyCode == 37) {
