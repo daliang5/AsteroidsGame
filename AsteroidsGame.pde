@@ -19,13 +19,13 @@ public void draw()
   background(0);
   ship.move();
   ship.show();
+  
   for(int i = 0; i< space.length;i++){
     space[i].show();
+    
   }
   for(int i = 0; i< ass.length;i++){
     ass[i].move();
-    ass[i].turn(3);
-    ass[i].setX(ass[i].getX() + 1);
     ass[i].show(); 
   }
 }
@@ -33,12 +33,11 @@ public void keyPressed() {
   if (keyCode == 37) {
     ship.turn(-5);
   } else if (keyCode == 38) {
-    
-    ship.accelerate (0.1); 
+    ship.accelerate (.5); 
   } else if (keyCode == 39) {
     ship.turn(5);
   } else if (keyCode == 40) {
-    ship.accelerate (-0.1);
+    ship.accelerate (-.58);
   } else if (key == 'c'){
     ship.hyperspace();
   }

@@ -1,17 +1,13 @@
 class Asteroids extends Floater{
   private int rotSpeed;
+          int pointDirection = (int)(Math.random()*360);
         
   public Asteroids(){
-    rotSpeed = (int)(Math.random()*5);
+    rotSpeed = (int)(Math.random()*6)-3;
     myCenterX = (int)(Math.random()*999);
     myCenterY = (int)(Math.random()*599);
     myColor = 200;
     myPointDirection = (int)(Math.random()*360);
-  }
-  public void move(){
-    int chance = (int)(Math.random()*2);
-    //if(chance == 0)
-        
     corners = 6;
     xCorners = new int[corners];
     yCorners = new int[corners];
@@ -25,27 +21,21 @@ class Asteroids extends Floater{
     yCorners[3] = -3;
     xCorners[4] = 1;
     yCorners[4] = 0;
-    xCorners[5] = -2;
-    yCorners[5] = 5;
-    //wrap around screen    
-    if(myCenterX >width)
-    {     
-      myCenterX = 0;    
-    }    
-    else if (myCenterX<0)
-    {     
-      myCenterX = width;    
-    }    
-    if(myCenterY >height)
-    {    
-      myCenterY = 0;    
-    } 
-    
-    else if (myCenterY < 0)
-    {     
-      myCenterY = height;    
-    }   
   }
+  public void move(){  
+    turn(rotSpeed);
+    super.move();
+    //super.accelerate(.1);
+    accelerated(3);
+  }
+   public void accelerated (double dAmount)   
+  {
+    //int pointDirection = (int)(Math.random()*360);
+    double dRadians =pointDirection*(Math.PI/180);     
+    //change coordinates of direction of travel    
+    myDirectionX = ((dAmount) * Math.cos(dRadians));    
+    myDirectionY = ((dAmount) * Math.sin(dRadians));      
+  }   
   public void setX(int x){myCenterX = x;}
   public void setY(int y){myCenterY = y;}
   public int getX(){return (int)myCenterX;}
