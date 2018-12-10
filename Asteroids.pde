@@ -4,23 +4,21 @@ class Asteroids extends Floater{
         
   public Asteroids(){
     rotSpeed = (int)(Math.random()*6)-3;
-    myCenterX = (int)(Math.random()*999);
-    myCenterY = (int)(Math.random()*599);
-    myColor = 200;
+    myCenterX = 0;
+    myCenterY = 0;
+    myColor = 100;
     myPointDirection = (int)(Math.random()*360);
-    corners = 6;
+    corners = 4;
     xCorners = new int[corners];
     yCorners = new int[corners];
-    xCorners[0] = -8;
-    yCorners[0] = -8;
-    xCorners[1] = 16;
-    yCorners[1] = 0;
-    xCorners[2] = -8;
-    yCorners[2] = 8;
-    xCorners[3] = -3;
-    yCorners[3] = -3;
-    xCorners[4] = 1;
-    yCorners[4] = 0;
+    xCorners[0] = -20;
+    yCorners[0] = -20;
+    xCorners[1] = 20;
+    yCorners[1] = -20;
+    xCorners[2] = 20;
+    yCorners[2] = 20;
+    xCorners[3] = -20;
+    yCorners[3] = 20;
   }
   public void move(){  
     turn(rotSpeed);
@@ -30,12 +28,12 @@ class Asteroids extends Floater{
   }
    public void accelerated (double dAmount)   
   {
-    //int pointDirection = (int)(Math.random()*360);
     double dRadians =pointDirection*(Math.PI/180);     
     //change coordinates of direction of travel    
     myDirectionX = ((dAmount) * Math.cos(dRadians));    
     myDirectionY = ((dAmount) * Math.sin(dRadians));      
   }   
+
   public void setX(int x){myCenterX = x;}
   public void setY(int y){myCenterY = y;}
   public int getX(){return (int)myCenterX;}
