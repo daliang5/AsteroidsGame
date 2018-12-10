@@ -21,30 +21,22 @@ public void setup()
 public void draw() 
 {
   background(0);
+  ship.move();
+  ship.show();
+  
   for(int i = 0; i< space.length;i++) space[i].show();
   
   if(left == true) ship.turn(-5);
   if(right == true) ship.turn(5);
   if(gas == true) ship.accelerate(.5);
   if(brake == true) ship.accelerate(-.5);
-  
-  for(int i = 0; i< ass.size();i++){
+
+  for(int i = 0; i< ass.size();i++){    
+    if(dist(ship.getX(),ship.getY(),ass.get(i).getX(),ass.get(i).getY()) <= 45.0)
+      ass.remove(i);
     ass.get(i).move();
     ass.get(i).show();
   }
-  for(int i = 0; i< ass.size();i++){
-
-    float shipXX = ship.getX();
-    float shipYY = ship.getY();
-    float assXX = ass.get(i).getX();
-    float assYY = ass.get(i).getY();
-    
-    if(dist(shipXX,shipYY,assXX,assYY) <= 45.0)
-      ass.remove(i);
-  }
-
-  ship.move();
-  ship.show();
 }
 
   public void keyPressed() 
