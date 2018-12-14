@@ -35,11 +35,11 @@ class Spaceship extends Floater
     myDirectionY = 0;
     myPointDirection = (int)(Math.random()*360);
   }
-}
+}/*
 interface Shootable{
   public void shoot();
 }
-
+*/
 /*class nut implements Shootable{
 }
 class Rock implements Shootable{

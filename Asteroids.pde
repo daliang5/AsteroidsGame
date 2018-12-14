@@ -33,7 +33,6 @@ class Asteroids extends Floater{
     myDirectionX = ((dAmount) * Math.cos(dRadians));    
     myDirectionY = ((dAmount) * Math.sin(dRadians));      
   }   
-
   public void setX(int x){myCenterX = x;}
   public void setY(int y){myCenterY = y;}
   public int getX(){return (int)myCenterX;}
